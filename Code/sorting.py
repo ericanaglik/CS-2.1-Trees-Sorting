@@ -9,6 +9,16 @@ def is_sorted(items):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if so
+    current = 0
+    right = 1
+    while current != len(items) - 1:
+        if items[current] > items[right]:
+            return False
+        else:
+            current += 1
+            right += 1
+    return True
+
 
 
 def bubble_sort(items):
@@ -107,4 +117,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    nums = [1,3,9,7,4]
+    nums2 = [1,2,3,4,5]
+    print(is_sorted(nums))
+    print(is_sorted(nums2))
