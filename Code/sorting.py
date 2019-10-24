@@ -34,11 +34,9 @@ def bubble_sort(items):
         if current == len(items) - 1:
             current = 0
             right = 1
+
         elif items[current] > items[right]:
-            old = items[current]
-            new = items[right]
-            items[current] = new
-            items[right] = old
+            items[current], items[right] = items[right], items[current]
         
         else:
             current += 1
@@ -62,10 +60,7 @@ def selection_sort(items):
             minimum = current
 
         elif current == len(items) - 1:
-            old = items[first]
-            new = items[minimum]
-            items[first] = new
-            items[minimum] = old
+            items[minimum], items[first] = items[first], items[minimum]
             first += 1
             current = first
             minimum = first
@@ -163,4 +158,4 @@ if __name__ == '__main__':
     nums2 = [1,2,3,4,5]
     # print(is_sorted(nums))
     # print(is_sorted(nums2))
-    print(selection_sort(nums))
+    print(bubble_sort(nums))
