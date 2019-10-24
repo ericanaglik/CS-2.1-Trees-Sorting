@@ -28,6 +28,21 @@ def bubble_sort(items):
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Repeat until all items are in sorted order
     # TODO: Swap adjacent items that are out of order
+    current = 0
+    right = 1
+    while not is_sorted(items):
+        if items[current] > items[right]:
+            old = items[current]
+            new = items[right]
+            items[current] = new
+            items[right] = old
+        elif items[current] == len(items) - 1:
+            current = 0
+            right = 1
+        else:
+            current += 1
+            right += 1
+    return(items)
 
 
 def selection_sort(items):
@@ -120,5 +135,6 @@ if __name__ == '__main__':
     # main()
     nums = [1,3,9,7,4]
     nums2 = [1,2,3,4,5]
-    print(is_sorted(nums))
-    print(is_sorted(nums2))
+    # print(is_sorted(nums))
+    # print(is_sorted(nums2))
+    print(bubble_sort(nums))
