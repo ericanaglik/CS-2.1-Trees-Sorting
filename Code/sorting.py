@@ -19,8 +19,6 @@ def is_sorted(items):
             right += 1
     return True
 
-
-
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
     repeating until all items are in sorted order.
@@ -42,7 +40,6 @@ def bubble_sort(items):
             current += 1
             right += 1
     return(items)
-
 
 def selection_sort(items):
     """Sort given items by finding minimum item, swapping it with first
@@ -67,13 +64,8 @@ def selection_sort(items):
         
         else:
             current += 1
+
     return(items)
-
-
-
-
-    
-
 
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
@@ -83,6 +75,24 @@ def insertion_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Take first unsorted item
     # TODO: Insert it in sorted order in front of items
+    sorted_index = 1
+    while not is_sorted(items):
+        num = items.pop(sorted_index)
+        
+        back_index = sorted_index - 1
+        for back_num in items[sorted_index-1::-1]:
+            if num > back_num:
+                items.insert(back_index + 1, num)
+                break
+
+            back_index -= 1
+        else:
+            items.insert(0, num)
+        
+        sorted_index += 1
+
+    return items
+
 
 def random_ints(count=20, min=1, max=50):
     """Return a list of `count` integers sampled uniformly at random from
@@ -158,4 +168,4 @@ if __name__ == '__main__':
     nums2 = [1,2,3,4,5]
     # print(is_sorted(nums))
     # print(is_sorted(nums2))
-    print(bubble_sort(nums))
+    print(insertion_sort(nums))
