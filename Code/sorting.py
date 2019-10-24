@@ -4,6 +4,40 @@ from sorting_iterative import is_sorted, bubble_sort, selection_sort, insertion_
 from sorting_recursive import split_sort_merge, merge_sort, quick_sort
 from sorting_integer import counting_sort, bucket_sort
 
+def is_sorted(items):
+    """Return a boolean indicating whether given items are in sorted order.
+    TODO: Running time: ??? Why and under what conditions?
+    TODO: Memory usage: ??? Why and under what conditions?"""
+    # TODO: Check that all adjacent items are in order, return early if so
+
+
+def bubble_sort(items):
+    """Sort given items by swapping adjacent items that are out of order, and
+    repeating until all items are in sorted order.
+    TODO: Running time: ??? Why and under what conditions?
+    TODO: Memory usage: ??? Why and under what conditions?"""
+    # TODO: Repeat until all items are in sorted order
+    # TODO: Swap adjacent items that are out of order
+
+
+def selection_sort(items):
+    """Sort given items by finding minimum item, swapping it with first
+    unsorted item, and repeating until all items are in sorted order.
+    TODO: Running time: ??? Why and under what conditions?
+    TODO: Memory usage: ??? Why and under what conditions?"""
+    # TODO: Repeat until all items are in sorted order
+    # TODO: Find minimum item in unsorted items
+    # TODO: Swap it with first unsorted item
+
+
+def insertion_sort(items):
+    """Sort given items by taking first unsorted item, inserting it in sorted
+    order in front of items, and repeating until all items are in order.
+    TODO: Running time: ??? Why and under what conditions?
+    TODO: Memory usage: ??? Why and under what conditions?"""
+    # TODO: Repeat until all items are in sorted order
+    # TODO: Take first unsorted item
+    # TODO: Insert it in sorted order in front of items
 
 def random_ints(count=20, min=1, max=50):
     """Return a list of `count` integers sampled uniformly at random from
