@@ -31,14 +31,15 @@ def bubble_sort(items):
     current = 0
     right = 1
     while not is_sorted(items):
-        if items[current] > items[right]:
+        if current == len(items) - 1:
+            current = 0
+            right = 1
+        elif items[current] > items[right]:
             old = items[current]
             new = items[right]
             items[current] = new
             items[right] = old
-        elif items[current] == len(items) - 1:
-            current = 0
-            right = 1
+        
         else:
             current += 1
             right += 1
@@ -53,6 +54,30 @@ def selection_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Find minimum item in unsorted items
     # TODO: Swap it with first unsorted item
+    current = 0
+    minimum = 0
+    first = 0
+    while not is_sorted(items):
+        if items[current] < items[minimum]:
+            minimum = current
+
+        elif current == len(items) - 1:
+            old = items[first]
+            new = items[minimum]
+            items[first] = new
+            items[minimum] = old
+            first += 1
+            current = first
+            minimum = first
+        
+        else:
+            current += 1
+    return(items)
+
+
+
+
+    
 
 
 def insertion_sort(items):
@@ -133,8 +158,9 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    nums = [1,3,9,7,4]
+    # nums = [1,3,9,7,4]
+    nums = [ 1239, 212, 1, 31, 492, 12321, 1323, 8, 12]
     nums2 = [1,2,3,4,5]
     # print(is_sorted(nums))
     # print(is_sorted(nums2))
-    print(bubble_sort(nums))
+    print(selection_sort(nums))
