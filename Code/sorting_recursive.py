@@ -1,5 +1,5 @@
 #!python
-
+from sorting_iterative import is_sorted, bubble_sort, selection_sort, insertion_sort
 
 def merge(items1, items2):
     """Merge given lists of items, each assumed to already be in sorted order,
@@ -9,6 +9,23 @@ def merge(items1, items2):
     # TODO: Repeat until one list is empty
     # TODO: Find minimum item in both lists and append it to new list
     # TODO: Append remaining items in non-empty list to new list
+    i = 0
+    new_list = []
+    while len(items1) != 0 and len(items2) != 0:
+        if items1[i] < items2[i]:
+            new_list.append(items1.pop(i))
+        else:
+            new_list.append(items2.pop(i))
+
+    if len(items1) == 0:
+        new_list.extend(items2)
+    
+    else:
+        new_list.extend(items1)
+    
+    return new_list
+
+# print(merge([1, 3, 5, 15], [2, 6, 9]))
 
 
 def split_sort_merge(items):
@@ -20,6 +37,12 @@ def split_sort_merge(items):
     # TODO: Split items list into approximately equal halves
     # TODO: Sort each half using any other sorting algorithm
     # TODO: Merge sorted halves into one list in sorted order
+
+    #split list into equal halves bitch i dont' know how to do this
+    # on list1 call selection
+    #on list2 call insertion
+    #on both lists call merge
+
 
 
 def merge_sort(items):
