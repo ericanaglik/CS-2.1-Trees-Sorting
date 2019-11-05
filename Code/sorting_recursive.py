@@ -27,6 +27,12 @@ def merge(items1, items2):
 
 # print(merge([1, 3, 5, 15], [2, 6, 9]))
 
+def bisect_list(items):
+    items1 = items[:len(items)//2]
+    items2 = items[len(items)//2:]
+
+    return items1, items2
+
 
 def split_sort_merge(items):
     """Sort given items by splitting list into two approximately equal halves,
@@ -38,8 +44,7 @@ def split_sort_merge(items):
     # TODO: Sort each half using any other sorting algorithm
     # TODO: Merge sorted halves into one list in sorted order
 
-    items1 = items[:len(items)//2]
-    items2 = items[len(items)//2:]
+    items1, items2 = bisect_list(items)
 
     selection_sort(items1)
 
@@ -58,6 +63,19 @@ def merge_sort(items):
     # TODO: Split items list into approximately equal halves
     # TODO: Sort each half by recursively calling merge sort
     # TODO: Merge sorted halves into one list in sorted order
+
+    if len(items) == 1:
+        return items
+
+    items1, items2 = bisect_list(items)
+
+    return merge(merge_sort(items1), merge_sort(items2))
+    
+print(merge_sort([12, 21,4124,1 , 124,24, 1241]))
+
+
+
+
 
 
 def partition(items, low, high):
