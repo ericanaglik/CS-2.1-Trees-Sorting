@@ -38,7 +38,6 @@ def bubble_sort(items):
         else:
             current += 1
             right += 1
-    return(items)
 
 def selection_sort(items):
     """Sort given items by finding minimum item, swapping it with first
@@ -64,8 +63,6 @@ def selection_sort(items):
         else:
             current += 1
 
-    return(items)
-
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
     order in front of items, and repeating until all items are in order.
@@ -89,5 +86,3 @@ def insertion_sort(items):
             items.insert(0, num)
         
         sorted_index += 1
-
-    return items

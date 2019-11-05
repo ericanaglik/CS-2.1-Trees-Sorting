@@ -38,12 +38,16 @@ def split_sort_merge(items):
     # TODO: Sort each half using any other sorting algorithm
     # TODO: Merge sorted halves into one list in sorted order
 
-    #split list into equal halves bitch i dont' know how to do this
-    # on list1 call selection
-    #on list2 call insertion
-    #on both lists call merge
+    items1 = items[:len(items)//2]
+    items2 = items[len(items)//2:]
 
+    selection_sort(items1)
 
+    insertion_sort(items2)
+
+    return merge(items1,items2)
+
+# print(split_sort_merge([3, 123, 4412, 51, 21, 3,1 ,2]))
 
 def merge_sort(items):
     """Sort given items by splitting list into two approximately equal halves,
