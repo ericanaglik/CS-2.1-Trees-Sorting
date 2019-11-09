@@ -25,7 +25,6 @@ def merge(items1, items2):
     
     return new_list
 
-# print(merge([1, 3, 5, 15], [2, 6, 9]))
 
 def bisect_list(items):
     items1 = items[:len(items)//2]
@@ -71,7 +70,7 @@ def merge_sort(items):
 
     return merge(merge_sort(items1), merge_sort(items2))
     
-# print(merge_sort([12, 21,4124,1 , 124,24, 1241]))
+
 
 
 
