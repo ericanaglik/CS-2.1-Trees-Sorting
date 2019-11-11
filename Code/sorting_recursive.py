@@ -79,12 +79,21 @@ def partition(items, low, high):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Choose a pivot any way and document your method in docstring above
+    pivot_index = 0
     # TODO: Loop through all items in range [low...high]
-    # TODO: Move items less than pivot into front of range [low...p-1]
-    # TODO: Move items greater than pivot into back of range [p+1...high]
+    for i in range(low, high + 1):
+        # TODO: Move items less than pivot into front of range [low...p-1]
+        if items[i] < items[pivot_index] and i > pivot_index:
+            item = items.pop(i)
+            items.insert(low, item)
+            pivot_index += 1
+        # TODO: Move items greater than pivot into back of range [p+1...high]
+        elif i < pivot_index:
+            item = items.pop(i)
+            items.insert(high, item)
+            pivot_index -= 1
     # TODO: Move pivot item into final position [p] and return index p
-
-    pivot = 0
+    return pivot_index
 
 
 # def swap(items, ind1, ind2):
