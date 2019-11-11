@@ -36,10 +36,14 @@ class PrefixTree:
     def is_empty(self):
         """Return True if this prefix tree is empty (contains no strings)."""
         # TODO
+        return self.root.num_children() == 0
+
 
     def contains(self, string):
         """Return True if this prefix tree contains the given string."""
         # TODO
+        return self.root.has_child(string)
+
 
     def insert(self, string):
         """Insert the given string into this prefix tree."""
