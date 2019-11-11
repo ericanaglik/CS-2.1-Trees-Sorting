@@ -71,12 +71,6 @@ def merge_sort(items):
     return merge(merge_sort(items1), merge_sort(items2))
     
 
-
-
-
-
-
-
 def partition(items, low, high):
     """Return index `p` after in-place partitioning given items in range
     `[low...high]` by choosing a pivot (TODO: document your method here) from
@@ -90,8 +84,11 @@ def partition(items, low, high):
     # TODO: Move items greater than pivot into back of range [p+1...high]
     # TODO: Move pivot item into final position [p] and return index p
 
-def swap(items, ind1, ind2):
-    items[ind1], items[ind2] = items[ind2], items[ind1]
+    pivot = 0
+
+
+# def swap(items, ind1, ind2):
+#     items[ind1], items[ind2] = items[ind2], items[ind1]
 
 def quick_sort(items, low=None, high=None):
     """Sort given items in place by partitioning items in range `[low...high]`
@@ -100,20 +97,20 @@ def quick_sort(items, low=None, high=None):
     TODO: Worst case running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check if high and low range bounds have default values (not given)
+    if low == None:
+        low = 0
+    if high == None:
+        high = len(items) - 1
     # TODO: Check if list or range is so small it's already sorted (base case)
+    if len(items) <= 1:
+        return items
     # TODO: Partition items in-place around a pivot and get index of pivot
+    pivot_index = partition(items, low, high)
     # TODO: Sort each sublist range by recursively calling quick sort
+    quick_sort(items, low, pivot_index - 1)
+    quick_sort(items, pivot_index + 1, high)
 
-    for pivot_index, pivot_num in enumerate(items):
-        store_index = pivot_index + 1
-        for index, num in enumerate(items[store_index:], store_index):
-            if num < pivot_num:
-                swap(items, store_index, index)
-                store_index += 1
-                
-        swap(items, pivot_index, store_index - 1)
-        
-    return items
 
-print(quick_sort([213, 32, 12, 3, 34, 54, 100]))
+
+
             
