@@ -79,7 +79,7 @@ def partition(items, low, high):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Choose a pivot any way and document your method in docstring above
-    pivot_index = 0
+    pivot_index = low
     # TODO: Loop through all items in range [low...high]
     for i in range(low, high + 1):
         # TODO: Move items less than pivot into front of range [low...p-1]
@@ -111,7 +111,7 @@ def quick_sort(items, low=None, high=None):
     if high == None:
         high = len(items) - 1
     # TODO: Check if list or range is so small it's already sorted (base case)
-    if len(items) <= 1:
+    if high - low + 1 <= 1:
         return items
     # TODO: Partition items in-place around a pivot and get index of pivot
     pivot_index = partition(items, low, high)

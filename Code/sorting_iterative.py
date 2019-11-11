@@ -10,7 +10,7 @@ def is_sorted(items):
     # RANGE 
     current = 0
     right = 1
-    while current != len(items) - 1:
+    while right < len(items):
         if items[current] > items[right]:
             return False
         else:
