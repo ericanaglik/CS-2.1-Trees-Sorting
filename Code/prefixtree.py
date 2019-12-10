@@ -101,7 +101,6 @@ class PrefixTree:
     def strings(self):
         """Return a list of all strings stored in this prefix tree."""
         # Create a list of all strings in prefix tree
-        all_strings = []
         return self.complete('')
 
     def _traverse(self, node, prefix, visit):
