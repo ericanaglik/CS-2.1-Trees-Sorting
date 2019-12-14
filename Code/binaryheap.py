@@ -129,8 +129,9 @@ class BinaryMinHeap(object):
         # ...
         # Swap this item with a child item if values are out of order
         child_item = self.items[child_index]
-        self.items[index] = child_item
-        self.items[child_index] = item
+        if item > child_item:
+            self.items[index] = child_item
+            self.items[child_index] = item
         # ...
         # Recursively bubble down again if necessary
         self._bubble_down(child_index)
@@ -156,7 +157,7 @@ class BinaryMinHeap(object):
 
 def test_binary_min_heap():
     # Create a binary min heap of 7 items
-    items = [9, 25, 86, 3, 29, 5, 26]
+    items = [9, 25, 86, 3, 29, 5, 55]
     heap = BinaryMinHeap()
     print('heap: {}'.format(heap))
 
