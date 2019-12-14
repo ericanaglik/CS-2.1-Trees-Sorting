@@ -96,8 +96,8 @@ class BinaryMinHeap(object):
         parent_item = self.items[parent_index]
         # Swap this item with parent item if values are out of order
         if item < parent_item:
-			self.items[parent_index] = item
-			self.items[index] = parent_item
+            self.items[parent_index] = item
+            self.items[index] = parent_item
         # Recursively bubble up again if necessary
         self._bubble_up(parent_index)
 

@@ -1,4 +1,5 @@
 #!python
+from random import shuffle
 
 from binaryheap import BinaryMinHeap
 
@@ -21,31 +22,31 @@ class PriorityQueue(object):
         """Return True if this priority queue is empty, or False otherwise."""
         return self.heap.is_empty()
 
-    def length(self):
+    def size(self):
         """Return the number of items in this priority queue."""
         return self.heap.size()
 
     def enqueue(self, item, priority):
         """Insert the given item into this priority queue in order according to
         the given priority."""
-        # TODO: Insert given item into heap in order according to given priority
-        # ...
+        # Insert given item into heap in order according to given priority
+        self.heap.insert((priority, item))
 
     def front(self):
         """Return the item at the front of this priority queue without removing
         it, or None if this priority queue is empty."""
         if self.size() == 0:
             return None
-        # TODO: Return minimum item from heap
-        # ...
+        # Return minimum item from heap
+        return self.heap.get_min()[1]
 
     def dequeue(self):
         """Remove and return the item at the front of this priority queue,
         or raise ValueError if this priority queue is empty."""
         if self.size() == 0:
             raise ValueError('Priority queue is empty and has no front item')
-        # TODO: Remove and return minimum item from heap
-        # ...
+        # Remove and return minimum item from heap
+        return self.heap.delete_min()[1]
 
     def push_pop(self, item, priority):
         """Remove and return the item at the front of this priority queue,
@@ -53,5 +54,22 @@ class PriorityQueue(object):
         This method is more efficient than calling dequeue and then enqueue."""
         if self.size() == 0:
             raise ValueError('Priority queue is empty and has no front item')
-        # TODO: Replace and return minimum item from heap
-        # ...
+        # Replace and return minimum item from heap
+        return self.heap.replace_min((priority, item))[1]
+
+if __name__ == '__main__':
+    pq = PriorityQueue()
+    items = list(zip(range(6), 'please'))
+    print(f'items: {items}')
+    shuffle(items)
+    print(f'shuffled: {items}')
+    for p, i in items:
+        pq.enqueue(i, p)
+
+    print('should come out in original order.')
+    output = []
+    while not pq.is_empty():
+        output.append(pq.dequeue())
+    
+    print(f'sorted: {".join(output)"}')
+        
