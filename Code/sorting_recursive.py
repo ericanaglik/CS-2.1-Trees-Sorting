@@ -49,9 +49,14 @@ def split_sort_merge(items):
 
     insertion_sort(items2)
 
-    return merge(items1,items2)
+    items[:] = merge(items1,items2)
 
-# print(split_sort_merge([3, 123, 4412, 51, 21, 3,1 ,2]))
+    return items
+
+# i = [3, 123, 4412, 51, 21, 3,1 ,2]
+# s = split_sort_merge(i)
+# print(i)
+# print(s)
 
 def merge_sort(items):
     """Sort given items by splitting list into two approximately equal halves,
@@ -68,8 +73,10 @@ def merge_sort(items):
 
     items1, items2 = bisect_list(items)
 
-    return merge(merge_sort(items1), merge_sort(items2))
-    
+    items[:] = merge(merge_sort(items1), merge_sort(items2))
+
+    return items
+
 
 def partition(items, low, high):
     """Return index `p` after in-place partitioning given items in range
