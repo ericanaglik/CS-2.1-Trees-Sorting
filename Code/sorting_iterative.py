@@ -1,6 +1,16 @@
 #!python
 
 
+''' Experiment to find out when merge sort is much faster than iterative sorting:
+
+'''
+
+''' Experiment to find how quick sort compares to merge sort on large list sizes
+ and different value distributions:
+    
+'''
+
+
 def is_sorted(items):
     """Return a boolean indicating whether given items are in sorted order.
     Running time: O(n) because we are going through all the items n 

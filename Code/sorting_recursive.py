@@ -1,4 +1,17 @@
 #!python
+
+''' Experiment to find out when merge sort is much faster than iterative sorting:
+Merge sort is pretty consistant because of divide and conquer. iterative searching
+can scale much worse at large array sizes and order of values causing many more
+swaps and comparisons.
+'''
+
+''' Experiment to find how quick sort compares to merge sort on large list sizes
+ and different value distributions:
+The worst case merge sort is just as fast as its best case at O(nlogn). Quicksort
+has worst cases as high as O(n^2) when the pivot point is bad.
+'''
+
 from sorting_iterative import is_sorted, bubble_sort, selection_sort, insertion_sort
 
 def merge(items1, items2):
