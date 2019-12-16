@@ -47,7 +47,10 @@ class PrefixTree:
 
             current = current.get_child(character)
 
-        return True
+        if current.terminal is True:
+            return True
+        
+        return False
 
 
     def insert(self, string):

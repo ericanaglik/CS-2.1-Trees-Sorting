@@ -154,6 +154,11 @@ class BinaryMinHeap(object):
         """Return the right child index of the item at the given index."""
         return (index << 1) + 2  # Shift left to multiply by 2
 
+def heap_sort(items):
+    heap = BinaryMinHeap(items)
+    for index in range(len(items)):
+        # replaces in place
+        items[index] = heap.delete_min()
 
 def test_binary_min_heap():
     # Create a binary min heap of 7 items
