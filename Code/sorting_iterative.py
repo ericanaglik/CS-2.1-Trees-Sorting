@@ -3,9 +3,9 @@
 
 def is_sorted(items):
     """Return a boolean indicating whether given items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Check that all adjacent items are in order, return early if so
+    Running time: O(n) because we are going through all the items n 
+    Memory usage: O(n) because we are going through all the items n"""
+    # Check that all adjacent items are in order, return early if so
 
     # RANGE 
     current = 0
@@ -21,10 +21,10 @@ def is_sorted(items):
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
     repeating until all items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Swap adjacent items that are out of order
+    Running time: O(n^2) if the items are not sorted
+    Memory usage: O(n^2) if the items are not sorted"""
+    # Repeat until all items are in sorted order
+    # Swap adjacent items that are out of order
     current = 0
     right = 1
     while not is_sorted(items):
@@ -42,11 +42,11 @@ def bubble_sort(items):
 def selection_sort(items):
     """Sort given items by finding minimum item, swapping it with first
     unsorted item, and repeating until all items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Find minimum item in unsorted items
-    # TODO: Swap it with first unsorted item
+    Running time: All cases O(n^2)
+    Memory usage: O(1) because the sorting alg is in place"""
+    # Repeat until all items are in sorted order
+    # Find minimum item in unsorted items
+    # Swap it with first unsorted item
     current = 0
     minimum = 0
     first = 0
@@ -66,11 +66,11 @@ def selection_sort(items):
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
     order in front of items, and repeating until all items are in order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Take first unsorted item
-    # TODO: Insert it in sorted order in front of items
+    Running time: O(n^2) worst case, O(n) best case
+    Memory usage: O(1) because the sorting alg is in place""""
+    # Repeat until all items are in sorted order
+    # Take first unsorted item
+    # Insert it in sorted order in front of items
     sorted_index = 1
     while not is_sorted(items):
         num = items.pop(sorted_index)
