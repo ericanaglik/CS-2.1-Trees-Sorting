@@ -67,7 +67,7 @@ def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
     order in front of items, and repeating until all items are in order.
     Running time: O(n^2) worst case, O(n) best case
-    Memory usage: O(1) because the sorting alg is in place""""
+    Memory usage: O(1) because the sorting alg is in place"""
     # Repeat until all items are in sorted order
     # Take first unsorted item
     # Insert it in sorted order in front of items
